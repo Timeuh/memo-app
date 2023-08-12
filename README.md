@@ -2,6 +2,10 @@
 
 This is a little memo app created with React.
 
+# 🔜 Coming Soon
+- #### Dark mode 🌓
+- #### Internationalization (english) 🇬🇧/🇺🇸
+
 # 📚 How to use
 
 ### ⌨️ Getting the project ready

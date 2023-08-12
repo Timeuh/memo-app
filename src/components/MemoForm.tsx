@@ -24,8 +24,8 @@ export default function MemoForm({memo, addMemo, changeMemo}: Props) {
   return (
     <div id={'memoForm'} className={'memo-form-container'}>
       <div className={'flex flex-row items-center justify-around w-full'}>
-        <button className={'form-button w-1/3'}>Vider</button>
-        <button className={'form-button w-1/3'}>Supprimer</button>
+        <button className={'form-button xl:w-1/3 w-2/5'}>Vider</button>
+        <button className={'form-button xl:w-1/3 w-2/5'}>Supprimer</button>
       </div>
       <form action='.' className={'memo-form'} id={`memo-${memo.id}`}>
         <input id={'memo-title'} type='text' placeholder={'Titre'} className={'memo-input h-10 rounded-full'} value={memo.title}

@@ -7,12 +7,12 @@
     font-family: 'SourceCodePro';
 }
 
-#memo-content::-webkit-scrollbar {
+::-webkit-scrollbar {
     border: 10px solid transparent;
     width: 8px;
 }
 
-#memo-content::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     border-radius: 10px;
     border: 10px solid transparent;
     background-color: #192A51;
@@ -20,8 +20,8 @@
 
 @layer components {
     .memo-item-desktop {
-        @apply w-[90%] h-12 flex flex-row items-center justify-center border-[1px] border-dark rounded-lg
-            hover:bg-purple hover:text-violet transition duration-300 hover:scale-90
+        @apply w-[90%] min-h-[4rem] flex flex-row items-center justify-center border-[1px] border-dark rounded-lg
+            hover:bg-purple hover:text-light transition duration-500 hover:scale-90
     }
 
     .memo-bar-desktop {

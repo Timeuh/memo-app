@@ -30,10 +30,19 @@ export default function App() {
     setPlaceholderMemo(memo);
   };
 
+  const deleteMemo = (id: number) => {
+    const newMemos: Array<Memo> = memos.filter((memo: Memo) => {
+      return memo.id !== id;
+    });
+    setMemos(newMemos);
+    setPlaceholderMemo(placeholderTypeMemo);
+    localStorage.setItem('memos', JSON.stringify(newMemos));
+  };
+
   return (
     <div id='App' className={'w-full h-screen bg-light flex flex-col items-center justify-center space-y-24 font-SourceCodePro'}>
       <h1 className={'app-title'}>Créez vos mémos</h1>
-      <MemoForm memo={placeholderMemo} addMemo={addMemo} changeMemo={changePlaceholderMemo}/>
+      <MemoForm memo={placeholderMemo} addMemo={addMemo} changeMemo={changePlaceholderMemo} deleteMemo={deleteMemo}/>
       <MemoBar memos={memos} selectMemo={selectMemo}/>
     </div>
   );

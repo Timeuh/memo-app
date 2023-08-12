@@ -1,10 +1,11 @@
 import {Memo} from '@/appTypes';
 
 type Props = {
-  memo: Memo
+  memo: Memo,
+  addMemo: (memo: Memo) => void
 }
 
-export default function MemoForm({memo}: Props) {
+export default function MemoForm({memo, addMemo}: Props) {
   return (
     <div id={'memoForm'} className={'h-1/2 xl:w-1/3 flex flex-col items-center justify-center w-4/5'}>
       <form action='.' className={'memo-form'} id={`memo-${memo.id}`}>

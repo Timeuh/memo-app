@@ -2,6 +2,7 @@ import MemoForm from '@/components/MemoForm';
 import MemoBar from '@/components/memobar/MemoBar';
 import {Memo} from '@/appTypes';
 import {useState} from 'react';
+import useMemoList from '@/hooks/useMemoList';
 
 export default function App() {
   const placeholderTypeMemo: Memo = {
@@ -11,36 +12,8 @@ export default function App() {
   };
 
   const [placeholderMemo, setPlaceholderMemo] = useState<Memo>(placeholderTypeMemo);
-
-  const [memos, setMemos] = useState<Array<Memo>>(
-    [
-      {
-        id: 1,
-        title: 'Premier Memo',
-        content: 'Contenu du premier memo'
-      },
-      {
-        id: 2,
-        title: 'Second Memo',
-        content: 'Contenu du second memo'
-      },
-      {
-        id: 3,
-        title: 'Troisième Memo',
-        content: 'Contenu du troisième memo'
-      },
-      {
-        id: 4,
-        title: 'Quatrième Memo',
-        content: 'Contenu du quatrième memo'
-      },
-      {
-        id: 5,
-        title: 'Cinquième Memo',
-        content: 'Contenu du cinquième memo'
-      }
-    ]
-  );
+  const [memos, setMemos] = useState<Array<Memo>>([]);
+  useMemoList(setMemos);
 
   const addMemo = (memo: Memo) => {
     const newMemos: Array<Memo> = [...memos, memo];

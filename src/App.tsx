@@ -4,6 +4,7 @@ import {Memo} from '@/appTypes';
 import {useState} from 'react';
 import useMemoList from '@/hooks/useMemoList';
 import getCurrentId from '@/functions/getCurrentId';
+import MemoMenuMobile from '@/components/memobar/MemoMenuMobile';
 
 export default function App() {
   const placeholderTypeMemo: Memo = {
@@ -75,6 +76,7 @@ export default function App() {
       <h1 className={'app-title'}>Créez vos mémos</h1>
       <MemoForm memo={placeholderMemo} addMemo={addMemo} changeMemo={changePlaceholderMemo} deleteMemo={deleteMemo} resetMemo={resetMemo}/>
       <MemoBar memos={memos} selectMemo={selectMemo}/>
+      <MemoMenuMobile memos={memos} selectMemo={selectMemo}/>
     </div>
   );
 }

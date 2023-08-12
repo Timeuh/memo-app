@@ -22,7 +22,11 @@ export default function MemoForm({memo, addMemo, changeMemo}: Props) {
   };
 
   return (
-    <div id={'memoForm'} className={'h-1/2 xl:w-1/3 flex flex-col items-center justify-center w-4/5'}>
+    <div id={'memoForm'} className={'memo-form-container'}>
+      <div className={'flex flex-row items-center justify-around w-full'}>
+        <button className={'form-button w-1/3'}>Vider</button>
+        <button className={'form-button w-1/3'}>Supprimer</button>
+      </div>
       <form action='.' className={'memo-form'} id={`memo-${memo.id}`}>
         <input id={'memo-title'} type='text' placeholder={'Titre'} className={'memo-input h-10 rounded-full'} value={memo.title}
           onChange={(event) => {
@@ -32,7 +36,7 @@ export default function MemoForm({memo, addMemo, changeMemo}: Props) {
           onChange={(event) => {
             changeContent(event);
           }}/>
-        <button id={'memo-submit'} className={'w-5/6 h-10 bg-dark text-light rounded-full text-xl shadow-2xl'}
+        <button id={'memo-submit'} className={'form-button w-5/6'}
           onClick={(event) => {
             createMemo(event);
           }}>Créer</button>

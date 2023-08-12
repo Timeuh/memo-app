@@ -19,6 +19,11 @@
 }
 
 @layer components {
+    .memo-item-desktop {
+        @apply w-[90%] h-12 flex flex-row items-center justify-center border-[1px] border-dark rounded-lg
+            hover:bg-purple hover:text-violet transition duration-300 hover:scale-90
+    }
+
     .memo-bar-desktop {
         @apply h-4/6 w-1/6 bg-violet absolute left-10 shadow-2xl shadow-main rounded-2xl p-2 flex-col items-center hidden xl:flex
     }

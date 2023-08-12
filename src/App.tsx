@@ -26,11 +26,15 @@ export default function App() {
     setPlaceholderMemo(memo);
   };
 
+  const selectMemo = (memo: Memo) => {
+    setPlaceholderMemo(memo);
+  };
+
   return (
     <div id='App' className={'w-full h-screen bg-light flex flex-col items-center justify-center space-y-24 font-SourceCodePro'}>
       <h1 className={'app-title'}>Créez vos mémos</h1>
       <MemoForm memo={placeholderMemo} addMemo={addMemo} changeMemo={changePlaceholderMemo}/>
-      <MemoBar memos={memos}/>
+      <MemoBar memos={memos} selectMemo={selectMemo}/>
     </div>
   );
 }

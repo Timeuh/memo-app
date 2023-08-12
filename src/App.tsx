@@ -49,7 +49,7 @@ export default function App() {
   return (
     <div id='App' className={'w-full h-screen bg-light flex flex-col items-center justify-center space-y-24 font-SourceCodePro'}>
       <h1 className={'app-title'}>Créez vos mémos</h1>
-      <MemoForm memo={placeholderMemo} addMemo={addMemo} changeMemo={changePlaceholderMemo} deleteMemo={deleteMemo}/>
+      <MemoForm memo={placeholderMemo} addMemo={addMemo} changeMemo={changePlaceholderMemo} deleteMemo={deleteMemo} resetMemo={resetMemo}/>
       <MemoBar memos={memos} selectMemo={selectMemo}/>
     </div>
   );

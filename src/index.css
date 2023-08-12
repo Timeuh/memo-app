@@ -7,7 +7,26 @@
     font-family: 'SourceCodePro';
 }
 
+#memo-content::-webkit-scrollbar {
+    border: 10px solid transparent;
+    width: 8px;
+}
+
+#memo-content::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    border: 10px solid transparent;
+    background-color: #192A51;
+}
+
 @layer components {
+    .memo-form {
+        @apply h-full w-2/3 flex flex-col justify-center items-center space-y-10 rounded-xl bg-violet shadow-2xl shadow-main
+    }
+
+    .memo-input {
+        @apply border-[1px] border-dark w-5/6 px-4 text-dark outline-none bg-light placeholder:text-purple resize-none
+    }
+
     .app-title {
         @apply pt-10 text-5xl text-main text-transparent bg-clip-text bg-gradient-to-r from-dark via-main to-dark
             font-bold drop-shadow-lg

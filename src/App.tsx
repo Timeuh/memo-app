@@ -3,6 +3,7 @@ import MemoBar from '@/components/memobar/MemoBar';
 import {Memo} from '@/appTypes';
 import {useState} from 'react';
 import useMemoList from '@/hooks/useMemoList';
+import getCurrentId from '@/functions/getCurrentId';
 
 export default function App() {
   const placeholderTypeMemo: Memo = {
@@ -16,15 +17,7 @@ export default function App() {
   useMemoList(setMemos);
 
   const addMemo = (memo: Memo) => {
-    const currentId = localStorage.getItem('currentId');
-    if (currentId === null){
-      return;
-    }
-
-    let nextId = parseInt(currentId);
-    nextId ++;
-    localStorage.setItem('currentId', JSON.stringify(nextId));
-    memo.id = nextId;
+    memo.id = getCurrentId();
 
     const newMemos: Array<Memo> = [...memos, memo];
     setMemos(newMemos);

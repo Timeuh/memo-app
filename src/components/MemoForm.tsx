@@ -4,10 +4,11 @@ import React, {MouseEvent} from 'react';
 type Props = {
   memo: Memo,
   addMemo: (memo: Memo) => void,
-  changeMemo: (memo: Memo) => void
+  changeMemo: (memo: Memo) => void,
+  deleteMemo: (id: number) => void
 }
 
-export default function MemoForm({memo, addMemo, changeMemo}: Props) {
+export default function MemoForm({memo, addMemo, changeMemo, deleteMemo}: Props) {
   const createMemo = (event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
     event.preventDefault();
     addMemo(memo);
@@ -25,7 +26,9 @@ export default function MemoForm({memo, addMemo, changeMemo}: Props) {
     <div id={'memoForm'} className={'memo-form-container'}>
       <div className={'flex flex-row items-center justify-around w-full'}>
         <button className={'form-button xl:w-1/3 w-2/5'}>Vider</button>
-        <button className={'form-button xl:w-1/3 w-2/5'}>Supprimer</button>
+        <button className={'form-button xl:w-1/3 w-2/5'} onClick={() => {
+          deleteMemo(memo.id);
+        }}>Supprimer</button>
       </div>
       <form action='.' className={'memo-form'} id={`memo-${memo.id}`}>
         <input id={'memo-title'} type='text' placeholder={'Titre'} className={'memo-input h-10 rounded-full'} value={memo.title}

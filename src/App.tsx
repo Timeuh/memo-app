@@ -4,13 +4,13 @@ import {Memo} from '@/appTypes';
 import {useState} from 'react';
 
 export default function App() {
-  const [placeholderMemo, setPlaceholderMemo] = useState<Memo>(
-    {
-      id: 0,
-      title: '',
-      content: ''
-    }
-  );
+  const placeholderTypeMemo: Memo = {
+    id: 0,
+    title: '',
+    content: ''
+  };
+
+  const [placeholderMemo, setPlaceholderMemo] = useState<Memo>(placeholderTypeMemo);
 
   const [memos, setMemos] = useState<Array<Memo>>(
     [
@@ -44,6 +44,7 @@ export default function App() {
 
   const addMemo = (memo: Memo) => {
     setMemos([...memos, memo]);
+    setPlaceholderMemo(placeholderTypeMemo);
   };
 
   const changePlaceholderMemo = (memo: Memo) => {

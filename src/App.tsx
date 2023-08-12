@@ -16,6 +16,16 @@ export default function App() {
   useMemoList(setMemos);
 
   const addMemo = (memo: Memo) => {
+    const currentId = localStorage.getItem('currentId');
+    if (currentId === null){
+      return;
+    }
+
+    let nextId = parseInt(currentId);
+    nextId ++;
+    localStorage.setItem('currentId', JSON.stringify(nextId));
+    memo.id = nextId;
+
     const newMemos: Array<Memo> = [...memos, memo];
     setMemos(newMemos);
     setPlaceholderMemo(placeholderTypeMemo);

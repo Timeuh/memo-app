@@ -21,7 +21,7 @@ export default function App() {
 
     const newMemos: Array<Memo> = [...memos, memo];
     setMemos(newMemos);
-    setPlaceholderMemo(placeholderTypeMemo);
+    resetMemo();
     localStorage.setItem('memos', JSON.stringify(newMemos));
   };
 
@@ -38,8 +38,12 @@ export default function App() {
       return memo.id !== id;
     });
     setMemos(newMemos);
-    setPlaceholderMemo(placeholderTypeMemo);
+    resetMemo();
     localStorage.setItem('memos', JSON.stringify(newMemos));
+  };
+
+  const resetMemo = () => {
+    setPlaceholderMemo(placeholderTypeMemo);
   };
 
   return (

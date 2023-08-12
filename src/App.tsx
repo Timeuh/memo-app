@@ -37,10 +37,14 @@ export default function App() {
     }
   ];
 
+  const addMemo = (memo: Memo) => {
+    memos.push(memo);
+  };
+
   return (
     <div id='App' className={'w-full h-screen bg-light flex flex-col items-center justify-center space-y-24 font-SourceCodePro'}>
       <h1 className={'app-title'}>Créez vos mémos</h1>
-      <MemoForm memo={placeholderMemo}/>
+      <MemoForm memo={placeholderMemo} addMemo={addMemo}/>
       <MemoBar memos={memos}/>
     </div>
   );

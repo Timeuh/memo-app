@@ -17,12 +17,36 @@ export default function App() {
   useMemoList(setMemos);
 
   const addMemo = (memo: Memo) => {
-    memo.id = getCurrentId();
+    let newMemos;
 
+    if (memo.id === 0){
+      newMemos = createMemo(memo);
+    } else {
+      newMemos = updateMemo(memo);
+    }
+
+    localStorage.setItem('memos', JSON.stringify(newMemos));
+  };
+
+  const updateMemo = (memo: Memo) => {
+    const newMemos = memos.map((memoInList: Memo) => {
+      if (memoInList.id === memo.id) {
+        memoInList.title = memo.title;
+        memoInList.content = memo.content;
+      }
+
+      return memoInList;
+    });
+    setMemos(newMemos);
+    return newMemos;
+  };
+
+  const createMemo = (memo: Memo) => {
+    memo.id = getCurrentId();
     const newMemos: Array<Memo> = [...memos, memo];
     setMemos(newMemos);
     resetMemo();
-    localStorage.setItem('memos', JSON.stringify(newMemos));
+    return newMemos;
   };
 
   const changePlaceholderMemo = (memo: Memo) => {

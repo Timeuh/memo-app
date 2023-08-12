@@ -1,5 +1,5 @@
 import {Memo} from '@/appTypes';
-import React, {MouseEvent} from 'react';
+import React from 'react';
 
 type Props = {
   memo: Memo,
@@ -10,8 +10,7 @@ type Props = {
 }
 
 export default function MemoForm({memo, addMemo, changeMemo, deleteMemo, resetMemo}: Props) {
-  const createMemo = (event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
-    event.preventDefault();
+  const createMemo = () => {
     addMemo(memo);
   };
 
@@ -42,7 +41,11 @@ export default function MemoForm({memo, addMemo, changeMemo, deleteMemo, resetMe
           }}/>
         <button id={'memo-submit'} className={'form-button w-5/6'}
           onClick={(event) => {
-            createMemo(event);
+            event.preventDefault();
+
+            if (memo.title.length !== 0 && memo.content.length !== 0) {
+              createMemo();
+            }
           }}>{memo.id === 0 ? 'Créer' : 'Enregistrer'}</button>
       </form>
     </div>

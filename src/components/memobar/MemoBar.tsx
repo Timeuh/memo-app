@@ -1,34 +1,11 @@
 import MemoBarItem from '@/components/memobar/MemoBarItem';
 import {Memo} from '@/appTypes';
 
-export default function MemoBar() {
-  const memos: Array<Memo> = [
-    {
-      id: 1,
-      title: 'Premier Memo',
-      content: 'Contenu du premier memo'
-    },
-    {
-      id: 2,
-      title: 'Second Memo',
-      content: 'Contenu du second memo'
-    },
-    {
-      id: 3,
-      title: 'Troisième Memo',
-      content: 'Contenu du troisième memo'
-    },
-    {
-      id: 4,
-      title: 'Quatrième Memo',
-      content: 'Contenu du quatrième memo'
-    },
-    {
-      id: 5,
-      title: 'Cinquième Memo',
-      content: 'Contenu du cinquième memo'
-    }
-  ];
+type Props = {
+  memos: Array<Memo>
+}
+
+export default function MemoBar({memos}: Props) {
 
   return (
     <div id={'memoBar'} className={'memo-bar-desktop'}>

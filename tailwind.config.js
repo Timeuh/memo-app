@@ -12,6 +12,9 @@ export default {
         'main': '#AAA1C8',
         'purple': '#967AA1',
         'dark': '#192A51'
+      },
+      fontFamily: {
+        'Titillium': 'Titillium'
       }
     }
   },

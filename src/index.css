@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    src: url('src/fonts/TitilliumWeb/TitilliumWeb-SemiBold.ttf');
+    font-family: Titillium;
+}
+
 @layer components {
 
 }

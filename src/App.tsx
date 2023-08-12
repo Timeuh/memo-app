@@ -43,8 +43,10 @@ export default function App() {
   );
 
   const addMemo = (memo: Memo) => {
-    setMemos([...memos, memo]);
+    const newMemos: Array<Memo> = [...memos, memo];
+    setMemos(newMemos);
     setPlaceholderMemo(placeholderTypeMemo);
+    localStorage.setItem('memos', JSON.stringify(newMemos));
   };
 
   const changePlaceholderMemo = (memo: Memo) => {

@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @font-face {
-    src: url('src/fonts/TitilliumWeb/TitilliumWeb-SemiBold.ttf');
-    font-family: Titillium;
+    src: url('src/fonts/SourceCodePro/SourceCodePro-VariableFont_wght.ttf');
+    font-family: 'SourceCodePro';
 }
 
 @layer components {

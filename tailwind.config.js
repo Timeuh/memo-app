@@ -14,7 +14,7 @@ export default {
         'dark': '#192A51'
       },
       fontFamily: {
-        'Titillium': 'Titillium'
+        'SourceCodePro': 'SourceCodePro'
       }
     }
   },

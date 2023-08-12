@@ -19,6 +19,10 @@
 }
 
 @layer components {
+    .memo-bar-desktop {
+        @apply h-4/6 w-1/6 bg-violet absolute left-10 shadow-2xl shadow-main rounded-2xl p-2 flex-col items-center hidden xl:flex
+    }
+
     .memo-form {
         @apply h-full xl:w-2/3 flex flex-col justify-center items-center space-y-10 rounded-xl bg-violet shadow-2xl shadow-main
             w-4/5

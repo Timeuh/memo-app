@@ -1,5 +1,5 @@
 import MemoForm from '@/components/MemoForm';
-import MemoBar from '@/components/MemoBar';
+import MemoBar from '@/components/memobar/MemoBar';
 
 export default function App() {
   return (

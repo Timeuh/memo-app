@@ -1,4 +1,4 @@
-import MemoBarItem from '@/components/MemoBarItem';
+import MemoBarItem from '@/components/memobar/MemoBarItem';
 
 export default function MemoBar() {
 

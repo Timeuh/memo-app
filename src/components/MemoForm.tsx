@@ -39,7 +39,7 @@ export default function MemoForm({memo, addMemo, changeMemo}: Props) {
         <button id={'memo-submit'} className={'form-button w-5/6'}
           onClick={(event) => {
             createMemo(event);
-          }}>Créer</button>
+          }}>{memo.id === 0 ? 'Créer' : 'Enregistrer'}</button>
       </form>
     </div>
   );

@@ -29,12 +29,11 @@
     }
 
     .memo-menu-mobile {
-        @apply h-4/6 w-3/4 bg-violet shadow-2xl shadow-main rounded-2xl p-2 flex-col items-center flex absolute
-            top-20 left-4 transition-transform duration-500
+        @apply h-4/6 w-3/4 shadow-2xl rounded-2xl p-2 flex-col items-center flex absolute top-20 left-4 transition-transform duration-500
     }
 
     .memo-menu-button {
-        @apply w-12 h-12 bg-main rounded-xl absolute top-4 left-4 flex flex-col items-center space-y-1 justify-center
+        @apply w-12 h-12 rounded-xl absolute top-4 left-4 flex flex-col items-center space-y-1 justify-center
     }
 
     .memo-form {

@@ -77,7 +77,7 @@ export default function App() {
   };
 
   return (
-    <main id='App' className={`w-full h-screen flex flex-col items-center justify-center space-y-24 font-SourceCodePro 
+    <main id='App' className={`w-full h-screen flex flex-col items-center justify-center space-y-24 font-SourceCodePro relative overflow-hidden
         ${isCurrentLight ? 'bg-light' : 'bg-dark'}`}>
       <h1 className={`app-title ${isCurrentLight ? 'from-dark via-main to-dark' : 'from-light via-main to-light'}`}>Créez vos mémos</h1>
       <MemoForm memo={placeholderMemo} addMemo={addMemo} changeMemo={changePlaceholderMemo} deleteMemo={deleteMemo} resetMemo={resetMemo}/>

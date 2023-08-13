@@ -45,8 +45,7 @@
     }
 
     .app-title {
-        @apply pt-10 text-5xl text-main text-transparent bg-clip-text bg-gradient-to-r from-dark via-main to-dark
-            font-bold drop-shadow-lg text-center
+        @apply pt-10 text-5xl text-transparent bg-clip-text bg-gradient-to-r font-bold drop-shadow-lg text-center
     }
 
     .form-button {

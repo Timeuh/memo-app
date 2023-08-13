@@ -5,8 +5,11 @@ import {useState} from 'react';
 import useMemoList from '@/hooks/useMemoList';
 import getCurrentId from '@/functions/getCurrentId';
 import MemoMenuMobile from '@/components/memobar/MemoMenuMobile';
+import useTheme from '@/hooks/useTheme';
 
 export default function App() {
+  const {isLight, toggleTheme} = useTheme();
+
   const placeholderTypeMemo: Memo = {
     id: 0,
     title: '',
@@ -72,11 +75,11 @@ export default function App() {
   };
 
   return (
-    <div id='App' className={'w-full h-screen bg-light flex flex-col items-center justify-center space-y-24 font-SourceCodePro'}>
+    <main id='App' className={`w-full h-screen ${isLight() ? 'bg-light' : 'bg-dark'} flex flex-col items-center justify-center space-y-24 font-SourceCodePro`}>
       <h1 className={'app-title'}>Créez vos mémos</h1>
       <MemoForm memo={placeholderMemo} addMemo={addMemo} changeMemo={changePlaceholderMemo} deleteMemo={deleteMemo} resetMemo={resetMemo}/>
       <MemoBar memos={memos} selectMemo={selectMemo}/>
       <MemoMenuMobile memos={memos} selectMemo={selectMemo}/>
-    </div>
+    </main>
   );
 }

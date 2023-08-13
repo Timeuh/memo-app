@@ -26,7 +26,7 @@ export default function MemoForm({memo, addMemo, changeMemo, deleteMemo, resetMe
   };
 
   return (
-    <div id={'memoForm'} className={'memo-form-container'}>
+    <div id={'memoForm'} className={`memo-form-container ${isCurrentLight ? 'bg-violet shadow-main' : 'bg-purple shadow-dark'}`}>
       <div className={'flex flex-row items-center justify-around w-full'}>
         <button className={`form-button xl:w-1/3 w-2/5 ${isCurrentLight ? 'bg-dark text-light' : 'bg-light text-dark'}`}
           onClick={resetMemo}>Vider</button>
@@ -35,14 +35,16 @@ export default function MemoForm({memo, addMemo, changeMemo, deleteMemo, resetMe
         }}>Supprimer</button>
       </div>
       <form action='.' className={'memo-form'} id={`memo-${memo.id}`}>
-        <input id={'memo-title'} type='text' placeholder={'Titre'} className={'memo-input h-10 rounded-full'} value={memo.title}
-          onChange={(event) => {
-            changeTitle(event);
-          }}/>
-        <textarea id={'memo-content'} placeholder={'Mémo'} className={'memo-input h-1/2 rounded-lg py-2'} value={memo.content}
-          onChange={(event) => {
-            changeContent(event);
-          }}/>
+        <input id={'memo-title'} type='text' placeholder={'Titre'} value={memo.title} className={`memo-input h-10 rounded-full 
+          ${isCurrentLight ? 'border-dark bg-light text-dark placeholder-purple' : 'border-violet bg-dark text-light placeholder-violet'}`}
+        onChange={(event) => {
+          changeTitle(event);
+        }}/>
+        <textarea id={'memo-content'} placeholder={'Mémo'} value={memo.content} className={`memo-input h-1/2 rounded-lg py-2 
+        ${isCurrentLight ? 'border-dark bg-light text-dark placeholder-purple' : 'border-violet bg-dark text-light placeholder-violet'}`}
+        onChange={(event) => {
+          changeContent(event);
+        }}/>
         <button id={'memo-submit'} className={`form-button w-5/6 ${isCurrentLight ? 'bg-dark text-light' : 'bg-light text-dark'}`}
           onClick={(event) => {
             event.preventDefault();

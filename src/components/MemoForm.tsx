@@ -1,5 +1,6 @@
 import {Memo} from '@/appTypes';
 import React from 'react';
+import useTheme from '@/hooks/useTheme';
 
 type Props = {
   memo: Memo,
@@ -10,6 +11,8 @@ type Props = {
 }
 
 export default function MemoForm({memo, addMemo, changeMemo, deleteMemo, resetMemo}: Props) {
+  const {isCurrentLight} = useTheme();
+
   const createMemo = () => {
     addMemo(memo);
   };
@@ -25,8 +28,9 @@ export default function MemoForm({memo, addMemo, changeMemo, deleteMemo, resetMe
   return (
     <div id={'memoForm'} className={'memo-form-container'}>
       <div className={'flex flex-row items-center justify-around w-full'}>
-        <button className={'form-button xl:w-1/3 w-2/5'} onClick={resetMemo}>Vider</button>
-        <button className={'form-button xl:w-1/3 w-2/5'} onClick={() => {
+        <button className={`form-button xl:w-1/3 w-2/5 ${isCurrentLight ? 'bg-dark text-light' : 'bg-light text-dark'}`}
+          onClick={resetMemo}>Vider</button>
+        <button className={`form-button xl:w-1/3 w-2/5 ${isCurrentLight ? 'bg-dark text-light' : 'bg-light text-dark'}`} onClick={() => {
           deleteMemo(memo.id);
         }}>Supprimer</button>
       </div>
@@ -39,7 +43,7 @@ export default function MemoForm({memo, addMemo, changeMemo, deleteMemo, resetMe
           onChange={(event) => {
             changeContent(event);
           }}/>
-        <button id={'memo-submit'} className={'form-button w-5/6'}
+        <button id={'memo-submit'} className={`form-button w-5/6 ${isCurrentLight ? 'bg-dark text-light' : 'bg-light text-dark'}`}
           onClick={(event) => {
             event.preventDefault();
 

@@ -50,7 +50,7 @@
     }
 
     .form-button {
-        @apply h-10 bg-dark text-light rounded-full text-xl shadow-2xl
+        @apply h-10 rounded-full text-xl shadow-2xl
     }
 
     .memo-form-container {

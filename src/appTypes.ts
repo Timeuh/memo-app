@@ -3,3 +3,5 @@ export type Memo = {
   title: string,
   content: string
 }
+
+export type Theme = 'light'| 'dark';

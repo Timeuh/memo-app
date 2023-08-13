@@ -7,6 +7,7 @@ import getCurrentId from '@/functions/getCurrentId';
 import MemoMenuMobile from '@/components/memobar/MemoMenuMobile';
 import {useTheme} from '@/hooks/useTheme';
 import Options from '@/components/Options';
+import OptionsMenuMobile from '@/components/OptionsMenuMobile';
 
 export default function App() {
   const {isCurrentLight} = useTheme();
@@ -83,6 +84,7 @@ export default function App() {
       <MemoBar memos={memos} selectMemo={selectMemo}/>
       <MemoMenuMobile memos={memos} selectMemo={selectMemo}/>
       <Options />
+      <OptionsMenuMobile />
     </main>
   );
 }

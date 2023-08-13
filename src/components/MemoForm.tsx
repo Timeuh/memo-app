@@ -1,6 +1,6 @@
 import {Memo} from '@/appTypes';
 import React from 'react';
-import useTheme from '@/hooks/useTheme';
+import {useTheme} from '@/hooks/useTheme';
 
 type Props = {
   memo: Memo,

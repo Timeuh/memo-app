@@ -1,7 +1,7 @@
 import MemoBarItem from '@/components/memobar/MemoBarItem';
 import {Memo} from '@/appTypes';
 import {useState} from 'react';
-import useTheme from '@/hooks/useTheme';
+import {useTheme} from '@/hooks/useTheme';
 
 type Props = {
   memos: Array<Memo>,

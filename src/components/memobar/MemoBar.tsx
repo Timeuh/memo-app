@@ -1,6 +1,6 @@
 import MemoBarItem from '@/components/memobar/MemoBarItem';
 import {Memo} from '@/appTypes';
-import useTheme from '@/hooks/useTheme';
+import {useTheme} from '@/hooks/useTheme';
 
 type Props = {
   memos: Array<Memo>,

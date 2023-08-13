@@ -1,5 +1,5 @@
 import {Memo} from '@/appTypes';
-import useTheme from '@/hooks/useTheme';
+import {useTheme} from '@/hooks/useTheme';
 
 type Props = {
   memo: Memo,

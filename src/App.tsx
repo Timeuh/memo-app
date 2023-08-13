@@ -5,7 +5,8 @@ import {useState} from 'react';
 import useMemoList from '@/hooks/useMemoList';
 import getCurrentId from '@/functions/getCurrentId';
 import MemoMenuMobile from '@/components/memobar/MemoMenuMobile';
-import useTheme from '@/hooks/useTheme';
+import {ThemeProvider, useTheme} from '@/hooks/useTheme';
+import Options from '@/components/Options';
 
 export default function App() {
   const {isCurrentLight} = useTheme();
@@ -75,12 +76,15 @@ export default function App() {
   };
 
   return (
-    <main id='App' className={`w-full h-screen flex flex-col items-center justify-center space-y-24 font-SourceCodePro 
+    <ThemeProvider>
+      <main id='App' className={`w-full h-screen flex flex-col items-center justify-center space-y-24 font-SourceCodePro 
       ${isCurrentLight ? 'bg-light' : 'bg-dark'}`}>
-      <h1 className={`app-title ${isCurrentLight ? 'from-dark via-main to-dark' : 'from-light via-main to-light'}`}>Créez vos mémos</h1>
-      <MemoForm memo={placeholderMemo} addMemo={addMemo} changeMemo={changePlaceholderMemo} deleteMemo={deleteMemo} resetMemo={resetMemo}/>
-      <MemoBar memos={memos} selectMemo={selectMemo}/>
-      <MemoMenuMobile memos={memos} selectMemo={selectMemo}/>
-    </main>
+        <h1 className={`app-title ${isCurrentLight ? 'from-dark via-main to-dark' : 'from-light via-main to-light'}`}>Créez vos mémos</h1>
+        <MemoForm memo={placeholderMemo} addMemo={addMemo} changeMemo={changePlaceholderMemo} deleteMemo={deleteMemo} resetMemo={resetMemo}/>
+        <MemoBar memos={memos} selectMemo={selectMemo}/>
+        <MemoMenuMobile memos={memos} selectMemo={selectMemo}/>
+        <Options />
+      </main>
+    </ThemeProvider>
   );
 }

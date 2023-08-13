@@ -1,8 +1,9 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import {Theme} from '@/appTypes';
 
 const useTheme = () => {
   const [theme, setTheme] = useState<Theme>('dark');
+  const [isCurrentLight, setIsCurrentLight] = useState<boolean>(true);
 
   const toggleTheme = () => {
     setTheme(prevTheme => {
@@ -10,11 +11,11 @@ const useTheme = () => {
     });
   };
 
-  const isLight = () => {
-    return theme === 'light';
-  };
+  useEffect(() => {
+    setIsCurrentLight(theme === 'light');
+  }, [theme]);
 
-  return {isLight, toggleTheme};
+  return {isCurrentLight, toggleTheme};
 };
 
 export default useTheme;

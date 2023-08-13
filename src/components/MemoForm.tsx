@@ -27,7 +27,7 @@ export default function MemoForm({memo, addMemo, changeMemo, deleteMemo, resetMe
 
   return (
     <div id={'memoForm'} className={`memo-form-container ${isCurrentLight ? 'bg-violet shadow-main' : 'bg-purple shadow-dark'}`}>
-      <div className={'flex flex-row items-center justify-around w-full'}>
+      <div className={'flex flex-row items-center justify-around w-full h-1/4'}>
         <button className={`form-button xl:w-1/3 w-2/5 ${isCurrentLight ? 'bg-dark text-light' : 'bg-light text-dark'}`}
           onClick={resetMemo}>Vider</button>
         <button className={`form-button xl:w-1/3 w-2/5 ${isCurrentLight ? 'bg-dark text-light' : 'bg-light text-dark'}`} onClick={() => {

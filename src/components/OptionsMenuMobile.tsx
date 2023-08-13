@@ -18,7 +18,7 @@ export default function OptionsMenuMobile() {
         <img src={isCurrentLight ? optionsLight : optionsDark} alt='options logo' className={'w-8 h-8'}/>
       </button>
       <div className={`w-1/3 h-1/5 rounded-md absolute top-20 right-4 flex flex-row items-center justify-center transition-transform duration-500
-          ${isCurrentLight ? 'bg-violet' : 'bg-purple'} ${isActive ? 'translate-x-0' : 'translate-x-96'}`} onClick={() => {
+          ${isCurrentLight ? 'bg-violet' : 'bg-purple'} ${isActive ? 'translate-x-0' : 'translate-x-48'}`} onClick={() => {
         setIsActive(!isActive);
       }}>
         <button onClick={() => {

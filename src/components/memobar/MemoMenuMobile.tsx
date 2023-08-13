@@ -18,7 +18,7 @@ export default function MemoMenuMobile({memos, selectMemo}: Props) {
 
   return (
     <div id={'memoMenu'} className={'w-full flex flex-col xl:hidden overflow-hidden'}>
-      <button id={'memoMenuTrigger'} className={`memo-menu-button ${isCurrentLight ? 'bg-main' : 'bg-purple'}`} onClick={triggerActive}>
+      <button id={'memoMenuTrigger'} className={`memo-menu-button ${isCurrentLight ? 'bg-violet' : 'bg-purple'}`} onClick={triggerActive}>
         <div className={`h-1 w-4/6 ${isCurrentLight ? 'bg-dark' : 'bg-light'}`}></div>
         <div className={`h-1 w-4/6 ${isCurrentLight ? 'bg-dark' : 'bg-light'}`}></div>
         <div className={`h-1 w-4/6 ${isCurrentLight ? 'bg-dark' : 'bg-light'}`}></div>

@@ -12,3 +12,8 @@ export type Title = {
   fr: string,
   en: string
 }
+
+export type MemoTitle = {
+  fr: string,
+  en: string
+}

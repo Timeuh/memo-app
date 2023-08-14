@@ -8,9 +8,12 @@ import MemoMenuMobile from '@/components/memobar/MemoMenuMobile';
 import {useTheme} from '@/hooks/useTheme';
 import Options from '@/components/Options';
 import OptionsMenuMobile from '@/components/OptionsMenuMobile';
+import {useLang} from '@/hooks/useLang';
+import {title} from '@/appTexts';
 
 export default function App() {
   const {isCurrentLight} = useTheme();
+  const {lang} = useLang();
 
   const placeholderTypeMemo: Memo = {
     id: 0,
@@ -79,7 +82,7 @@ export default function App() {
   return (
     <main id='App' className={`w-full h-screen flex flex-col items-center justify-center space-y-24 font-SourceCodePro relative overflow-hidden
         ${isCurrentLight ? 'bg-light' : 'bg-dark'}`}>
-      <h1 className={`app-title ${isCurrentLight ? 'from-dark via-main to-dark' : 'from-light via-main to-light'}`}>Créez vos mémos</h1>
+      <h1 className={`app-title ${isCurrentLight ? 'from-dark via-main to-dark' : 'from-light via-main to-light'}`}>{title[lang]}</h1>
       <MemoForm memo={placeholderMemo} addMemo={addMemo} changeMemo={changePlaceholderMemo} deleteMemo={deleteMemo} resetMemo={resetMemo}/>
       <MemoBar memos={memos} selectMemo={selectMemo}/>
       <MemoMenuMobile memos={memos} selectMemo={selectMemo}/>

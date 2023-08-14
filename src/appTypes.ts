@@ -5,3 +5,10 @@ export type Memo = {
 }
 
 export type Theme = 'light'| 'dark';
+
+export type Lang = 'fr' | 'en';
+
+export type Title = {
+  fr: string,
+  en: string
+}

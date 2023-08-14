@@ -1,8 +1,8 @@
 import {useTheme} from '@/hooks/useTheme';
-import light from '@/img/light.png';
-import dark from '@/img/dark.png';
-import french from '@/img/france.png';
-import english from '@/img/england.png';
+import light from '@/assets/img/light.png';
+import dark from '@/assets/img/dark.png';
+import french from '@/assets/img/france.png';
+import english from '@/assets/img/england.png';
 import {useLang} from '@/hooks/useLang';
 
 export default function Options() {

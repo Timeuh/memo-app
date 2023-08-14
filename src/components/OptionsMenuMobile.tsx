@@ -1,10 +1,10 @@
 import {useTheme} from '@/hooks/useTheme';
-import optionsLight from '@/img/options-light.png';
-import optionsDark from '@/img/options-dark.png';
-import lightMode from '@/img/light.png';
-import darkMode from '@/img/dark.png';
-import french from '@/img/france.png';
-import english from '@/img/england.png';
+import optionsLight from '@/assets/img/options-light.png';
+import optionsDark from '@/assets/img/options-dark.png';
+import lightMode from '@/assets/img/light.png';
+import darkMode from '@/assets/img/dark.png';
+import french from '@/assets/img/france.png';
+import english from '@/assets/img/england.png';
 import {useState} from 'react';
 import {useLang} from '@/hooks/useLang';
 

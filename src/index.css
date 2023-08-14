@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @font-face {
-    src: url('src/fonts/SourceCodePro/SourceCodePro-VariableFont_wght.ttf');
+    src: url('assets/fonts/SourceCodePro/SourceCodePro-VariableFont_wght.ttf');
     font-family: 'SourceCodePro';
 }
 

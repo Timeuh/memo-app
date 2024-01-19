@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  apache:
+    image: httpd:latest
+    container_name: memo-app-apache
+    volumes:
+      - ./dist:/usr/local/apache2/htdocs/
+    restart: always
+    ports:
+      - "52111:80"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.memo-app.rule=Host(`memo-app.timeuh.fr`)"
+      - "traefik.http.routers.memo-app.entrypoints=websecure"
+      - "traefik.http.routers.memo-app.tls.certresolver=myresolver"
+    networks:
+      - traefik_web
+
+networks:
+  traefik_web:
+    external: true
+  default:
+    driver: bridge
